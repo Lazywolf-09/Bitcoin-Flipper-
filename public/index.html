@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Coin Flip Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="center" id="homePage">
+        <h1>Bitcoin Coin Flip Game</h1>
+
+        <!-- Wallet Connection Section -->
+        <div id="walletSection">
+            <div class="inputbox">
+                <label for="walletAddress">Bitcoin Core Wallet Address</label>
+                <input 
+                    type="text" 
+                    id="walletAddress" 
+                    placeholder="Enter your Bitcoin Core wallet address" 
+                    style="
+                        width: 100%;
+                        max-width: 600px; /* Maximum width of the input field */
+                        min-width: 300px; /* Minimum width of the input field */
+                        padding: 12px; /* Add padding for better spacing */
+                        border: 2px solid #000; /* Border styling */
+                        border-radius: 10px; /* Rounded corners */
+                        font-size: 1.2em; /* Increase font size for readability */
+                        box-sizing: border-box; /* Ensure padding and border are included in width */
+                        margin-bottom: 10px; /* Space below the input field */
+                    "
+                >
+            </div>
+            <div class="inputbox">
+                <label for="username">Username</label>
+                <input 
+                    type="text" 
+                    id="username" 
+                    placeholder="Enter your Bitcoin Core username" 
+                    style="
+                        width: 100%;
+                        max-width: 600px;
+                        min-width: 300px;
+                        padding: 12px;
+                        border: 2px solid #000;
+                        border-radius: 10px;
+                        font-size: 1.2em;
+                        box-sizing: border-box;
+                        margin-bottom: 10px;
+                    "
+                >
+            </div>
+            <div class="inputbox">
+                <label for="password">Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    placeholder="Enter your Bitcoin Core password" 
+                    style="
+                        width: 100%;
+                        max-width: 600px;
+                        min-width: 300px;
+                        padding: 12px;
+                        border: 2px solid #000;
+                        border-radius: 10px;
+                        font-size: 1.2em;
+                        box-sizing: border-box;
+                        margin-bottom: 10px;
+                    "
+                >
+            </div>
+            <button id="connectWallet">Connect Wallet</button>
+            <div id="walletStatus"></div>
+        </div>
+    </div>
+
+    <div class="center" id="gamePage" style="display:none;">
+        <h2>Place Your Bet</h2>
+        <p>Current Balance: <span id="balance"></span></p>
+
+        <!-- Input for Bet Amount -->
+        <div class="inputbox">
+            <input type="number" id="betAmount" step="0.0001" min="0" required>
+            <span>Bet Amount (BTC)</span>
+        </div>
+        
+        <!-- Select Bet Side -->
+        <div class="inputbox">
+            <select id="betSide" required>
+                <option value="heads">Heads</option>
+                <option value="tails">Tails</option>
+            </select>
+        </div>
+        
+        <!-- Flip Coin Button -->
+        <div class="inputbox">
+            <input type="button" id="flipCoin" value="Flip Coin">
+        </div>
+
+        <!-- Check Balance Button -->
+        <div class="inputbox">
+            <input type="button" id="checkBalance" value="Check Balance">
+        </div>
+
+        <!-- Coin Container -->
+        <div class="coin-container" id="coinContainer">
+            <div class="coin" id="coin">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20231016151806/tails.png" alt="Coin">
+            </div>
+            <!-- Result and balance update -->
+            <p class="result" id="result"></p>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
